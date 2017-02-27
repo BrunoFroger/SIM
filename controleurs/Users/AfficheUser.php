@@ -8,7 +8,11 @@
 
 
 //echo"<br>debut de AfficheUser.php";
-
+if (isset($_SESSION['OptionStatusSim'])) {
+    $OptionStatusSim = $_SESSION['OptionStatusSim'];
+}  else {
+    $OptionStatusSim = "";
+}
 
 if (isset($_SESSION['UserId'])) {
     $Id = $_SESSION['UserId'];
@@ -56,18 +60,21 @@ if ($Id <> NULL) {
     echo "      <th>ExpirationDate</th>";
     echo "  </tr>";
 
+    $dateCourante=date('Y-m-d');
     $ListeSIM = ClassSIM::getListbyUser($tmp->Id);
     //print_r($ListeSIM);
-    foreach ($ListeSIM as $Iccid) {
+    foreach ($ListeSIM as $Iccid) {    
         //print_r($Iccid);
         $Sim = ClassSIM::NewByICCID($Iccid['ICCID']);
-        echo "  <tr>";
-        //echo "      <td>$Sim->ICCID</td>";
-        echo "      <td><a href='controleurs/USIM/selectUpdateUsim.php?ICCID=" .
-        $Sim->ICCID . "&MSISDN=" . $Sim->MSISDN . "'>" . $Sim->ICCID . "</a></td>";
-        echo "      <td>$Sim->MSISDN</td>";
-        echo "      <td>$Sim->ExpDate</td>";
-        echo "  </tr>";
+        if (($dateCourante <= $Sim->ExpDate) && ($OptionStatusSim = 'Toutes')){
+            echo "  <tr>";
+            //echo "      <td>$Sim->ICCID</td>";
+            echo "      <td><a href='controleurs/USIM/selectUpdateUsim.php?ICCID=" .
+            $Sim->ICCID . "&MSISDN=" . $Sim->MSISDN . "'>" . $Sim->ICCID . "</a></td>";
+            echo "      <td>$Sim->MSISDN</td>";
+            echo "      <td>$Sim->ExpDate</td>";
+            echo "  </tr>";
+        }
     }
     echo "</table>";
 

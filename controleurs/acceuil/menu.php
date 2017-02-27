@@ -56,6 +56,9 @@ if (isset($_SESSION['sousMenu'])) {
             echo "  <td width=$taille_menu>";
             echo "      <a href=controleurs/Users/selectUpdateUser.php>mise a jour d'un user</a>";
             echo "  </td>";
+            echo "  <td width=$taille_menu>";
+            echo "      <a href=controleurs/Users/selectStatUsers.php>statistiques sur les users</a>";
+            echo "  </td>";
             echo "</tr>";
             break;
         case 'Usim':
@@ -84,6 +87,9 @@ if (isset($_SESSION['sousMenu'])) {
             echo "  </td>";
             echo "  <td width=$taille_menu>";
             echo "      <a href=controleurs/Telephones/selectCreeTel.php>Creation d'un Telephone</a>";
+            echo "  </td>";
+            echo "  <td width=$taille_menu>";
+            echo "      <a href=controleurs/Telephones/selectStatsTels.php>statistiques sur les telephones</a>";
             echo "  </td>";
             echo "</tr>";
             break;

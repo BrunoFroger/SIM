@@ -20,8 +20,9 @@ if (isset($_GET['Id'])) {
     $user = ClassUsers::NewById($_GET['Id']);
     if ($user <> null) {
         $destinataire = $user->Email;
-        $sujet = "SIM affected to you";
+        $sujet = "SIM/Phones affected to you";
         $expediteur = "bruno.froger@orange.com";
+        //$expediteur = "bruno.froger2@wanadoo.fr";
         $contenu = "Hello,"
                 . "<br><br> "
                 . "You are using devices send to you for test purpose, "
@@ -51,7 +52,7 @@ if (isset($_GET['Id'])) {
         $contenu = $contenu . "<br><br>list of Phones"
                 . "<br>";
         $ListeTel = ClassPhone::getListbyUser($user->Id);
-        print_r($ListeTel);
+        //print_r($ListeTel);
         $contenu = $contenu .  "<table border=1px>";
         $contenu = $contenu .  "  <tr>";
         $contenu = $contenu .  "      <th>IMEI</th>";
@@ -59,8 +60,8 @@ if (isset($_GET['Id'])) {
         $contenu = $contenu .  "      <th>model</th>";
         $contenu = $contenu .  "  </tr>";
         foreach ($ListeTel as $item) {
-            echo "<br> traitement d'un item telephone";
-            print_r($item);
+            //echo "<br> traitement d'un item telephone";
+            //print_r($item);
             $tel = ClassPhone::NewById($item['Id']);
             $contenu = $contenu . "  <tr>";
             $contenu = $contenu . "      <td>$tel->IMEI</td>";
@@ -75,6 +76,7 @@ if (isset($_GET['Id'])) {
         $contenu = $contenu . "<br><br>Bruno Froger";
 
         file_put_contents($ficMail, "to: $destinataire\n");
+        file_put_contents("$ficMail", "cci: $expediteur\n", FILE_APPEND);
         file_put_contents("$ficMail", "from: ORANGE SOFT Team <SIM.SOFT@orange-labs.fr>\n", FILE_APPEND);
         file_put_contents("$ficMail", "subject: $sujet\n", FILE_APPEND);
         file_put_contents("$ficMail", "<br>message from $expediteur<br>\n", FILE_APPEND);

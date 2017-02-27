@@ -27,6 +27,9 @@ if (isset($_SESSION['affichageCorps'])) {
             $_SESSION['FormUser']='MAJ';
             include 'controleurs/Users/formulaireUser.php';
             break;
+        case 'statUser':
+            include 'controleurs/Users/StatsUsers.php';
+            break;
         
         // Bloc des USIM
         case 'affUsim':
@@ -64,7 +67,10 @@ if (isset($_SESSION['affichageCorps'])) {
             $_SESSION['FormTel']='MAJ';
             include 'controleurs/Telephones/formulaireTel.php';
             break;
-        case '' :
+           case 'statTel':
+            include 'controleurs/Telephones/StatsTels.php';
+            break;
+     case '' :
             echo "Selectionnez un sous menu";
             break;
         default:

@@ -2,6 +2,21 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/R:/SIM/controleurs/Users/envoiMailRecap.php</file>
+            <file>file:/R:/SIM/index.php</file>
+            <file>file:/R:/SIM/controleurs/Users/selectUpdateUser.php</file>
+            <file>file:/R:/SIM/controleurs/Telephones/StatsTels.php</file>
+            <file>file:/R:/SIM/controleurs/USIM/ListeUsim.php</file>
+            <file>file:/R:/SIM/modeles/Phones/ClassPhone.php</file>
+            <file>file:/R:/SIM/controleurs/acceuil/menu.php</file>
+            <file>file:/R:/SIM/controleurs/Users/ListeUsers.php</file>
+            <file>file:/R:/SIM/modeles/Users/ClassUsers.php</file>
+            <file>file:/R:/SIM/controleurs/Users/StatsUsers.php</file>
+            <file>file:/R:/SIM/controleurs/Options/formulaireOptions.php</file>
+            <file>file:/R:/SIM/controleurs/Telephones/selectStatsTels.php</file>
+            <file>file:/R:/SIM/controleurs/acceuil/corps.php</file>
+            <file>file:/R:/SIM/controleurs/Users/selectStatUsers.php</file>
+        </group>
     </open-files>
 </project-private>

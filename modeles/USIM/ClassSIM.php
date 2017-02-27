@@ -96,6 +96,29 @@ class ClassSIM {
         }
     }
 
+    static public function NbSim() {
+        $resultat = array();
+        $tmp = new ClassSIM();
+        $requete = "select * from USIM";
+        if ($resultat = $tmp->getRequeteList($requete)) {
+            return count($resultat);
+        } else {
+            return 0;
+        }
+    }
+
+    static public function NbActivesSim() {
+        $resultat = array();
+        $tmp = new ClassSIM();
+        $dateCourante=date('Y-m-d');
+        $requete = "select * from USIM where ExpDate > '$dateCourante'";
+        if ($resultat = $tmp->getRequeteList($requete)) {
+            return count($resultat);
+        } else {
+            return 0;
+        }
+    }
+
     static public function delete($ICCID) {
         $requete = "delete from USIM where ICCID='$ICCID' ";
         echo ("<p>requete = $requete </p>");

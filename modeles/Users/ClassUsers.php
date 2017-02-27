@@ -111,7 +111,7 @@ class ClassUsers {
         }
     }
 
-    private function getRequeteList($requete) {
+    public function getRequeteList($requete) {
         $listItems = array();
         try {
             $dbh = new PDO(SERVEUR, USER, PWD);

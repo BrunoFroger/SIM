@@ -31,13 +31,13 @@ class ClassPhone {
     }
 
     static public function getList() {
-        $requete = "select Id from Phones ";
+        $requete = "select Id from Phones order by marque";
         //echo ("<p>requete = $requete </p>");
         return ClassPhone::getRequeteList($requete);
     }
 
     static public function getListbyUser($User) {
-        $requete = "select Id from Phones where IdUser='$User'";
+        $requete = "select Id from Phones where IdUser='$User' order by marque";
         //echo ("<p>requete = $requete </p>");
         return ClassPhone::getRequeteList($requete);
     }
@@ -151,7 +151,7 @@ class ClassPhone {
         }
     }
 
-    private function getRequeteList($requete) {
+    public function getRequeteList($requete) {
         //echo ("<p>requete(list) = $requete </p>");
         $listItems = array();
         try {

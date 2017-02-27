@@ -10,6 +10,9 @@ session_start();
 $myIncludePath = '/var/www/SIM';
 set_include_path(get_include_path() . PATH_SEPARATOR . $myIncludePath);
 
+if (!isset($_SESSION['OptionStatusSim'])){
+    $_SESSION['OptionStatusSim']="Valide";
+}
 
 include_once 'modeles/Users/ClassUsers.php';
 include_once 'modeles/USIM/ClassSIM.php';

@@ -48,8 +48,21 @@ echo "</table>";
 
 $liste = ClassSIM::getList();
 
-echo "<br> <br> Liste des SIM en base";
-echo " (" . ClassSIM::NbFreeSim() . " SIM disponibles)";
+echo "<br> <br> Liste des SIM en base<br>";
+echo "<table>";
+echo "  <tr>";
+echo "      <td>total</td>";
+echo "      <td>" . ClassSIM::NbSim() . "</td>";
+echo "  </tr>";
+echo "  <tr>";
+echo "      <td>disponibles</td>";
+echo "      <td>" . ClassSIM::NbFreeSim() . "</td>";
+echo "  </tr>";
+echo "  <tr>";
+echo "      <td>actives</td>";
+echo "      <td>" . ClassSIM::NbActivesSim() . "</td>";
+echo "  </tr>";
+echo "</table>";
 echo "<br><br>";
 // on affiche la liste des sim
 echo "<table border=1px>";
