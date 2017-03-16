@@ -19,6 +19,7 @@ class ClassSIM {
     public $User;
     public $MSISDN;
     public $DR;
+    public $CreationDate;
     public $ExpDate;
     public $PIN;
     public $PUK;
@@ -164,6 +165,7 @@ class ClassSIM {
                     $this->User = $monItem['User'];
                     $this->MSISDN = $monItem['MSISDN'];
                     $this->DR = $monItem['DR'];
+                    $this->CreationDate = $monItem['CreationDate'];
                     $this->ExpDate = $monItem['ExpDate'];
                     $this->PIN = $monItem['PIN'];
                     $this->PUK = $monItem['PUK'];
@@ -210,6 +212,7 @@ class ClassSIM {
         $requete = "insert into USIM (ICCID, User, MSISDN, DR, ExpDate, PIN, PUK) "
                 . "values ('$this->ICCID', '$this->User', "
                 . "'$this->MSISDN', '$this->DR', "
+                . "'$this->CreationDate', "
                 . "'$this->ExpDate', '$this->PIN', "
                 . "'$this->PUK')";
         //echo ("<p>requete = $requete </p>");
@@ -241,6 +244,7 @@ class ClassSIM {
                 . "User='$this->User', "
                 . "MSISDN='$this->MSISDN', "
                 . "DR='$this->DR', "
+                . "ExpDate='$this->CreationDate', "
                 . "ExpDate='$this->ExpDate', "
                 . "PIN='$this->PIN', "
                 . "PUK='$this->PUK' "

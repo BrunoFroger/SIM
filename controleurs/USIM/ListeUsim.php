@@ -9,7 +9,7 @@
 $cptSimAffichees = 0;
 $dateCourante=date('Y-m-d');
 
-echo "<br> Date Courante = $dateCourante";
+//echo "<br> Date Courante = $dateCourante";
         
 if (isset($_SESSION['OptionStatusSim'])) {
     $OptionStatusSim = $_SESSION['OptionStatusSim'];
