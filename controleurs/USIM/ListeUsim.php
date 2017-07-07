@@ -70,6 +70,7 @@ echo "  <tr>";
 echo "      <th>ICCID</th>";
 echo "      <th>User</th>";
 echo "      <th>MSISDN</th>";
+echo "      <th>CreationDate</th>";
 echo "      <th>ExpDate</th>";
 echo "      <th>DR</th>";
 echo "      <th>PIN code</th>";
@@ -150,6 +151,7 @@ foreach ($liste as $item) {
             echo "      <td><a href='controleurs/Users/selectAffUsers.php?nom=" . $user->Id . "'>$affUser</a></td>";
         }
         echo "      <td>$tmp->MSISDN</td>";
+        echo "      <td>$tmp->CreationDate</td>";
         $dateSIM=strtotime($tmp->ExpDate);
         $diffToday = $date - $dateSIM;
         $diffLastMonth = $lastmonth - $dateSIM;

@@ -55,7 +55,7 @@ class ClassSIM {
     }
 
     static public function getList() {
-        $requete = "select ICCID from USIM order by ExpDate,ICCID";
+        $requete = "select ICCID from USIM order by CreationDate,ICCID";
         //echo ("<p>requete = $requete </p>");
         return ClassSIM::getRequeteList($requete);
     }
@@ -209,7 +209,7 @@ class ClassSIM {
     }
 
     function createBase() {
-        $requete = "insert into USIM (ICCID, User, MSISDN, DR, ExpDate, PIN, PUK) "
+        $requete = "insert into USIM (ICCID, User, MSISDN, DR, CreationDate, ExpDate, PIN, PUK) "
                 . "values ('$this->ICCID', '$this->User', "
                 . "'$this->MSISDN', '$this->DR', "
                 . "'$this->CreationDate', "

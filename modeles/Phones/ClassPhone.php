@@ -31,7 +31,7 @@ class ClassPhone {
     }
 
     static public function getList() {
-        $requete = "select Id from Phones order by marque";
+        $requete = "select Id from Phones order by marque, model";
         //echo ("<p>requete = $requete </p>");
         return ClassPhone::getRequeteList($requete);
     }

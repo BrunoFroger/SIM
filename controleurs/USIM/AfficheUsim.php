@@ -77,6 +77,7 @@ if ($affiche == 1) {
     echo "  <tr>";
     echo "      <th>ICCID</th>";
     echo "      <th>MSISDN</th>";
+    echo "      <th>CreationDate</th>";
     echo "      <th>ExpirationDate</th>";
     echo "      <th>PIN</th>";
     echo "      <th>PUK</th>";
@@ -90,6 +91,7 @@ if ($affiche == 1) {
         echo "  <tr>";
         echo "      <td>" . $Sim['ICCID'] . "</td>";
         echo "      <td>" . $Sim['MSISDN'] . "</td>";
+        echo "      <td>" . $Sim['CreationDate'] . "</td>";
         echo "      <td>" . $Sim['ExpDate'] . "</td>";
         echo "      <td>" . $Sim['PIN'] . "</td>";
         echo "      <td>" . $Sim['PUK'] . "</td>";

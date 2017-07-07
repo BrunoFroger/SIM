@@ -17,7 +17,6 @@ include_once 'modeles/USIM/ClassSIM.php';
 include_once 'modeles/Phones/ClassPhone.php';
 include_once 'modeles/Users/ClassUsers.php';
 
-
 echo "<br> traitement des cartes SIM";
 $fic = "/tmp/SIM/SIM.csv";
 //$fic = "SIM.csv";
@@ -33,7 +32,7 @@ if ($fichierCsv != null) {
         //print_r($sim);
 
         $ligne = array("$sim->ICCID", "$sim->User", "$sim->MSISDN",
-            "$sim->DR", "$sim->ExpDate", "$sim->PIN", "$sim->PUK");
+            "$sim->DR", $sim->CreationDate, "$sim->ExpDate", "$sim->PIN", "$sim->PUK");
 
         echo "<br>";
         print_r($ligne);
