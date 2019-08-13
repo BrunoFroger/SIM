@@ -58,6 +58,7 @@ echo "      <th>marque</th>";
 echo "      <th>modele</th>";
 echo "      <th>Utilisateur</th>";
 echo "      <th>Commentaire</th>";
+echo "      <th>Suppression</th>";
 echo "  </tr>";
 
 $liste = ClassPhone::getList();
@@ -124,6 +125,7 @@ foreach ($liste as $item) {
             echo "      <td><a href='controleurs/Users/selectAffUsers.php?nom=" . $user->Id . "'>$affUser</a></td>";
         }
         echo "      <td>$tmp->Commentaire</td>";
+        echo "      <td><a href='controleurs/Telephones/deletePhone.php?ID=".$tmp->Id."'>X</a></td>";
         echo "  </tr>";
         //break;
     }
