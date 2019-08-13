@@ -82,6 +82,22 @@ class ClassUsers {
         return $this->getRequete($requete);
     }
 
+    static public function delete($Id) {
+        $requete = "delete from Users where Id = '$Id' ";
+        //echo ("<p>requete = $requete </p>");
+        try {
+            $dbh = new PDO(SERVEUR, USER, PWD);
+            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $mesItems = $dbh->query($requete);
+            //echo ("<p>requete executee</p>");
+            $dbh = null;
+            return true;
+        } catch (PDOException $e) {
+            echo "une erreur est survenue : " . $e->getMessage();
+            return null;
+        }
+    }
     private function getRequete($requete) {
         //echo ("<p>requete = $requete </p>");
         try {

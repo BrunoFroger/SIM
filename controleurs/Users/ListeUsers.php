@@ -21,6 +21,7 @@ echo "      <th>Service</th>";
 echo "      <th>Email</th>";
 echo "      <th>Nb SIM</th>";
 echo "      <th>Nb Tel</th>";
+echo "      <th>Suppression</th>";
 echo "  </tr>";
 
 foreach ($liste as $user) {
@@ -36,6 +37,7 @@ foreach ($liste as $user) {
     echo "      <td>$tmp->Email</td>";
     echo "      <td style=\"text-align:center\">$nbSim</td>";
     echo "      <td style=\"text-align:center\">$nbTel</td>";
+    echo "      <td><a href='controleurs/Users/deleteUser.php?ID=".$tmp->Id."'>X</a></td>";
     echo "  </tr>";
 }
 echo "</table>";
