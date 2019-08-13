@@ -19,14 +19,15 @@ if (isset($_SESSION['FormUsim'])) {
     $Bouton = $_SESSION['FormUsim'];
     if ($Bouton == 'MAJ'){
         echo "<br>MAJ d'une SIM<br>";
-        if ($sim->ExpDate == ""){
+        if ($sim->ExpDate == "9999-99-99"){
             echo "<br>on force ExpDtae a date courante<br>";
             $sim->ExpDate = $dateCourante;
         }
     }else{
         echo "<br>Creation d'une SIM<br>";
-        echo "<br>on force CreationDate a date courante<br>";
-        $sim->CreationDate=$dateCourante;
+        echo "<br>on force ExpirationDate a 9999-12-31<br>";
+        $sim->ExpDate="9999-12-31";
+        
     }
 } else {
     $Bouton = "??";
@@ -71,7 +72,8 @@ echo "      </tr>";
 echo "      <tr>";
 echo "          <td>CreationDate</td>";
 echo "          <td><input name='CreationDate' value='$sim->CreationDate'></td>";
-echo "      </tr>";echo "      <tr>";
+echo "      </tr>";
+echo "      <tr>";
 echo "          <td>ExpDate</td>";
 echo "          <td><input name='ExpDate' value='$sim->ExpDate'></td>";
 echo "      </tr>";

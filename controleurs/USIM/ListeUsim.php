@@ -104,6 +104,7 @@ foreach ($liste as $item) {
             }
             break;
         case 'Valide' :
+            //if ($dateCourante <= $tmp->ExpDate || strcmp($tmp->ExpDate,"") == 0){
             if ($dateCourante <= $tmp->ExpDate){
                 $affiche = 1;
             }else{
@@ -152,8 +153,12 @@ foreach ($liste as $item) {
         }
         echo "      <td>$tmp->MSISDN</td>";
         echo "      <td>$tmp->CreationDate</td>";
-        $dateSIM=strtotime($tmp->ExpDate);
-        $diffToday = $date - $dateSIM;
+        if ($tmp->ExpDate == ""){
+            $dateSIM=$dateCourante;
+        }else{
+            $dateSIM=strtotime($tmp->ExpDate);
+        }
+        $diffToday = $tmp->ExpDate - $dateSIM;
         $diffLastMonth = $lastmonth - $dateSIM;
         $bgcolor='';
         if ($today > $dateSIM) {

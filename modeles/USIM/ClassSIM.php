@@ -120,6 +120,12 @@ class ClassSIM {
         }
     }
 
+    static public function getExpirationDate($usim){
+        $tmp = new ClassSim();
+        $requete="select ExpDate where ICCID like '%$Iccid%'";
+        return $this->getRequete($requete);
+    }
+    
     static public function delete($ICCID) {
         $requete = "delete from USIM where ICCID='$ICCID' ";
         echo ("<p>requete = $requete </p>");
