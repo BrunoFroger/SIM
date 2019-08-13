@@ -19,7 +19,7 @@ include_once 'modeles/Users/ClassUsers.php';
 
 if (isset($_GET['ID'])) {
     echo "<br> suppression d'un user ".$_GET['ID'];
-    //$result = ClassUsers::delete($_GET['ID']);
+    $result = ClassUsers::delete($_GET['ID']);
     $result = null;
     if ($result == null){
         echo "<br> erreur lors de la suppression du telephone";
