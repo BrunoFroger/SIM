@@ -31,5 +31,5 @@ if (isset($_GET['ID'])) {
 
 echo "<br>on sort de deleteUser.php";
 
-echo "<br><a href=/SIM/index.php>Continuer</a>";
-//header("location: /SIM");
+//echo "<br><a href=/SIM/index.php>Continuer</a>";
+header("location: /SIM");
