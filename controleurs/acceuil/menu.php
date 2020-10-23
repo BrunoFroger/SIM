@@ -13,7 +13,7 @@ if (isset($_SESSION['sousMenu'])) {
 }  else {
     $sousMenu = "";
 }
-
+echo "<p>$sousMenu<p>";
 echo "<table>";
 echo "<tr>";
 echo "  <td width=$taille_menu>";
