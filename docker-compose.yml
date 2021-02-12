@@ -1,0 +1,52 @@
+# docker-compose.yml
+
+version: '3'
+
+services:
+  php-fpm:
+    image: bfroger/php-fpm:latest
+    build:
+      context: ./php
+    depends_on:
+      - database
+    volumes:
+      - ../src:/var/www
+    environment:
+      - MYSQL_ROOT_PASSWORD=bruno&
+      - MYSQL_DATABASE=SIM
+      - MYSQL_USER=mysql
+      - MYSQL_PASSWORD=mysql
+
+  nginx:
+    image: bfroger/nginx:latest
+    build:
+      context: ./nginx
+    ports:
+      - "8090:80"
+      - "8453:443"
+    volumes:
+      - ../src:/var/www
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/sites/:/etc/nginx/sites-available
+      - ./nginx/conf.d/:/etc/nginx/conf.d
+    depends_on:
+      - database
+      - php-fpm
+    environment:
+      - MYSQL_ROOT_PASSWORD=bruno&
+      - MYSQL_DATABASE=SIM
+      - MYSQL_USER=mysql
+      - MYSQL_PASSWORD=mysql
+
+  database:
+    image: bfroger/mariadb:latest
+    build:
+      context: ./database
+    environment:
+      - MYSQL_ROOT_PASSWORD=bruno&
+      - MYSQL_DATABASE=SIM
+      - MYSQL_USER=mysql
+      - MYSQL_PASSWORD=mysql
+    volumes:
+      #- ./database/popote_vide.sql:/docker-entrypoint-initdb.d/popote.sql
+      - ./database/createBase.sql:/docker-entrypoint-initdb.d/createBase.sql
